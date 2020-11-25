@@ -3,7 +3,7 @@ const { readdir } = require('fs').promises;
 const { expect } = require('chai');
 const count = require('@lets/count');
 
-Object.entries({__dirname, __filename}).forEach(([name, source]) => {
+Object.entries({ __dirname, __filename }).forEach(([ name, source ]) => {
 	delete require.cache[require.resolve('.')];
 	const { clean, override, reset } = require('.')(source);
 
